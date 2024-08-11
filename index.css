@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body{
+   font-family: 'Poppins', sans-serif ;
+   background-color: rgb(35, 35, 35);
+  max-width: 1280px;
+   margin: 0 auto;
+}
+.carrossel{
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: -1;
+}
+.informacoes{
+   display: none;
+   color: white;
+}
+.informacoes.ativa{
+   display: block;
+   margin-left: 10%;
+}
+.conteudo{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   min-height: 100vh;
+}
+.informacoes h1{
+   font-family: "Archivo Black", sans-serif;
+   text-transform:uppercase ;
+}
+.informacoes .description{
+   width: 40%;
+}
+.botoes-carrossel{
+   display: flex;
+   gap: 20px;
+   justify-content: center;
+}
+.botoes-carrossel .botao{
+   width: 15px;
+   height: 15px;
+   border-radius: 50%;
+   border: 2px solid transparent;
+   border-color: white;
+   cursor: pointer;
+}
+.botoes-carrossel .botao.selecionado{
+   background-color: grey;
+}
+.imagem{
+   width: 100vw;
+   height: 100vh;
+   object-fit: cover;
+   background-position: center;
+   background-size: cover;
+height: auto;
+   display: none;
+}
+.imagem.ativa{
+   display: block;
+   animation: mudarImage 0.7s;
+}
+@keyframes mudarImagem{
+   from{
+      opacity: 0.85;
+   }
+   to{
+      opacity: 1;
+   }
+}
+main:after{
+   content: "";
+   min-height: 100vh;
+   width: 100vw;
+   position: fixed;
+   top: 0;
+   left: 0;
+  background: linear-gradient(120deg, rgba(0,0,01) 10%, rgba(0,0,0,0.05926120448179273) 50%, rgba(0,0,0,1) 90%);
+  z-index: -1;
+}
